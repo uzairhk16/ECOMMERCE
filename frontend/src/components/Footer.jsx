@@ -6,7 +6,7 @@ const Footer = () => {
     <div >
       <div className="flex flex-col sm:grid grid-cols-4 gap-14 my-10 text-sm mt-40">
         <div>
-          <img className="mb-5 w-32" src={assets.logo} alt="" />
+          <img className="mb-5 sm:ml-5 w-32" src={assets.logo} alt="" />
           <p className="w-full md:w-2/3 text-gray-600">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
             minima laboriosam, aspernatur hic, eveniet cupiditate ea ducimus
@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
       <div>
         <hr />
-        <h3 className="py-5 text-md text-center">Copyright 2024© forever.com - All Rights Reserved.</h3>
+        <h3 className="py-5 text-sm md:text-lg text-center">Copyright 2024© forever.com - All Rights Reserved.</h3>
       </div>
       
     </div>
