@@ -4,13 +4,13 @@ import { assets } from "../assets/assets";
 const Footer = () => {
   return (
     <div >
-      <div className="flex flex-col sm:grid grid-cols-4 gap-14 my-10 text-sm mt-40">
+      <div className="flex flex-col sm:grid grid-cols-4 gap-14 text-sm mt-40 ">
         <div>
-          <img className="mb-5 sm:ml-5 w-32" src={assets.logo} alt="" />
-          <p className="w-full md:w-2/3 text-gray-600">
+          <img className="mb-2 sm:ml-5 w-32" src={assets.logo} alt="" />
+          <p className="mb-3 w-full md:w-2/3 text-gray-600">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
             minima laboriosam, aspernatur hic, eveniet cupiditate ea ducimus
-            dicta quo officia, nulla delectus harum quaerat.
+            dicta quo officia, nulla delectus.
           </p>
         </div>
         <div>
@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
       <div>
         <hr />
-        <h3 className="py-5 text-sm md:text-lg text-center">Copyright 2024© forever.com - All Rights Reserved.</h3>
+        <h3 className="mt-5 text-sm md:text-lg text-center">Copyright 2024© forever.com - All Rights Reserved.</h3>
       </div>
       
     </div>

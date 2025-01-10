@@ -12,7 +12,7 @@ import Product from "./pages/Product.jsx";
 import PlaceOrder from "./pages/PlaceOrder.jsx";
 import Layout from "./Layout.jsx";
 import "./App.css";
-import {ShopContextProvider} from "./context/ShopContext.jsx"
+import { ShopContextProvider } from "./context/ShopContext.jsx";
 
 import {
   Route,
@@ -20,18 +20,20 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import SearchIcon from "./pages/SearchIcon.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path="/"
       element={<Layout />}
-      className="sm:px-[5vw] md:px-[7vw] lg: px-[9vw]"
+      className="sm:px-[5vw] md:px-[7vw] lg:px-[9vw]"
     >
       <Route path="" element={<Home />} />
       <Route path="/collection" element={<Collection />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/collection" element={<SearchIcon />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
       <Route path="/orders" element={<Orders />} />
@@ -42,9 +44,7 @@ const router = createBrowserRouter(
 );
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <ShopContextProvider>
-      <RouterProvider router={router} />
-    </ShopContextProvider>
-  </StrictMode>
+  <ShopContextProvider>
+    <RouterProvider router={router} />
+  </ShopContextProvider>
 );

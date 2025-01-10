@@ -2,12 +2,12 @@ import React from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import SearchIcon from "../pages/SearchIcon";
 
 const Header = () => {
-
   const [visible, setVisible] = useState(false)
   return (
-    <div className="flex items-center justify-between font-medium p-5  ">
+    <div className="flex items-center justify-between font-medium p-2 ">
       <Link to="/">
       <img src={assets.logo} alt="#" className="w-36" />
       </Link>
@@ -30,8 +30,8 @@ const Header = () => {
         </NavLink>
       </ul>
 
-      <div className="flex items-center sm:gap-6 gap-2 ">
-        <img src={assets.search_icon} alt="" className="w-5 cursor-pointer" />
+      <div  className="flex items-center sm:gap-6 gap-2 ">
+        <SearchIcon />
         <div className="group relative">
           <img
             src={assets.profile_icon}
@@ -71,6 +71,7 @@ const Header = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 
