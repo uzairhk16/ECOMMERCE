@@ -13,6 +13,7 @@ import PlaceOrder from "./pages/PlaceOrder.jsx";
 import Layout from "./Layout.jsx";
 import "./App.css";
 import { ShopContextProvider } from "./context/ShopContext.jsx";
+import { ToastContainer, toast } from 'react-toastify';
 
 import {
   Route,
