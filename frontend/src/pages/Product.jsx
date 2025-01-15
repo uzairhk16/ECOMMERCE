@@ -5,7 +5,7 @@ import { assets } from "../assets/assets";
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency, addToCart } = useContext(ShopContext);
+  const { products, currency, addToCart, addCount, count } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState(false);
   const [size, setSize] = useState("");

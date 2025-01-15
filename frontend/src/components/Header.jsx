@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { assets } from "../assets/assets";
+import { ShopContext } from "../context/ShopContext";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import SearchIcon from "../pages/SearchIcon";
 
 const Header = () => {
+  const { count } = useContext(ShopContext);
   const [visible, setVisible] = useState(false)
   return (
     <div className="flex items-center justify-between font-medium p-2 ">
@@ -52,7 +54,7 @@ const Header = () => {
             className="absolute right-[-5px] bottom-[-5px] w-4 text-center 
           leading-4 text-white rounded-full bg-black text-[8px] aspect-square "
           >
-            10
+            {count}
           </p>
         </Link>
         <img onClick={() => setVisible(true)} src={assets.menu_icon} className="w-5 cursor-pointer sm:hidden" alt="" />
