@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
+import { assets } from "../assets/assets";
+import CartTotal from "../components/CartTotal";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { products, currency, cartItems } = useContext(ShopContext);
+  const { products, currency, cartItems, handleDelete} = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
-
+  const navigate = useNavigate()
+  
   useEffect(() => {
     const tempData = [];
     for (const items in cartItems) {
@@ -21,6 +25,11 @@ const Cart = () => {
     }
     setCartData(tempData);
   }, [cartItems]);
+
+  const handlePlaceOrderClick = () => {
+    navigate('/PlaceOrder'); // Navigate to the PlaceOrder page
+  };
+ 
   return (
     <div className="border-t pt-14">
       <div className="text-2xl mb-3">
@@ -59,10 +68,20 @@ const Cart = () => {
                 min={1}
                 className="border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1"
                 defaultValue={item.quantity}
+                // onChange={(e) => e.target.value === "" || "0" ? null : handleDelete(item._id,item.size,Number(e.target.value))}
               />
+              <img onClick={()=> handleDelete(item._id, item.size,0)} className="w-4 mr-4 cursor-pointer sm:w-5" src={assets.bin_icon} />
             </div>
           );
         })}
+      </div>
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450px]">
+        <CartTotal />
+        <div className="w-full text-end">
+          <button onClick={handlePlaceOrderClick} className="bg-black text-white txt-sm my-8 py-3 px-8">PROCEED TO CHECKOUT</button>
+        </div>
+        </div>
       </div>
     </div>
   );
